@@ -1,0 +1,25 @@
+﻿@model Product []
+@{
+    
+    ViewBag.Title = "Title Name";
+}
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Price</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Product product in Model)
+        {
+            <tr data-produtid="@product.ProductionId" data-stocklevel="@ViewBag.StockLevel">
+                <td>@product.Name</td>
+                <td>@($"{product.Price:C2}")</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+
+
